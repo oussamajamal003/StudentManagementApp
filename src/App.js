@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const routes = require("./routes");
+const userroutes = require("./routes/user-routes");
 // const errorHandler = require("./Middlewares/errorHandler"); 
 
 const app = express();
@@ -14,7 +14,10 @@ app.use(cors({
 
 app.use(express.json());
 
-app.use("/api", routes);
+app.use("/api/auth", userroutes);
+//app.use("/api/users", userroutes);
+// app.use(errorHandler);
+
 
 app.get('/', (req, res) => {
   res.status(200).json({ status: 'ok', message: 'Server is running' });
