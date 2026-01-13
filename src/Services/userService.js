@@ -15,10 +15,10 @@ class UserService {
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
-    const userId = await User.create({ username, email, password: hashedPassword });
+    const userId = await User.create({ username, email, password: hashedPassword, role: 'user' });
 
     const token = jwt.sign(
-      { user_id: userId, email, username },
+      { user_id: userId, email, username, role: 'user' },
       env.JWT_SECRET,
       { expiresIn: env.JWT_EXPIRES_IN }
     );
@@ -41,7 +41,7 @@ class UserService {
     }
 
     const token = jwt.sign(
-      { user_id: user.user_id, email: user.email, username: user.username },
+      { user_id: user.user_id, email: user.email, username: user.username, role: user.role },
       env.JWT_SECRET,
       { expiresIn: env.JWT_EXPIRES_IN }
     );

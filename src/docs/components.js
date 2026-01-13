@@ -15,6 +15,10 @@
  *           type: string
  *           format: email
  *           description: The user's email
+ *         role:
+ *           type: string
+ *           enum: [user, admin]
+ *           description: The user's role
  *         createdAt:
  *           type: string
  *           format: date-time
@@ -23,6 +27,7 @@
  *         user_id: 1
  *         username: johndoe
  *         email: johndoe@example.com
+ *         role: user
  *         createdAt: 2024-03-10T10:00:00.000Z
  *
  *     UserInput:
