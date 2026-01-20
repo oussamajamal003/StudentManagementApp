@@ -48,8 +48,58 @@
  *           minLength: 6
  *       example:
  *         username: johndoe
- *         email: johndoe@example.com
- *         password: password123
+ *
+ *     Student:
+ *       type: object
+ *       properties:
+ *         id:
+ *           type: integer
+ *           description: The auto-generated id of the student
+ *         first_name:
+ *           type: string
+ *         last_name:
+ *           type: string
+ *         email:
+ *           type: string
+ *           format: email
+ *         age:
+ *           type: integer
+ *         created_at:
+ *           type: string
+ *           format: date-time
+ *         updated_at:
+ *           type: string
+ *           format: date-time
+ *       example:
+ *         id: 1
+ *         first_name: John
+ *         last_name: Doe
+ *         email: john.student@example.com
+ *         age: 20
+ *         created_at: 2024-03-10T10:00:00.000Z
+ *
+ *     StudentInput:
+ *       type: object
+ *       required:
+ *         - first_name
+ *         - last_name
+ *         - email
+ *         - age
+ *       properties:
+ *         first_name:
+ *           type: string
+ *         last_name:
+ *           type: string
+ *         email:
+ *           type: string
+ *           format: email
+ *         age:
+ *           type: integer
+ *       example:
+ *         first_name: John
+ *         last_name: Doe
+ *         email: john.student@example.com
+ *         age: 20
  *
  *     LoginInput:
  *       type: object

@@ -11,7 +11,7 @@ class User {
     return rows[0];
   }
 
-  static async create({ username, email, password, role = 'user', createdBy = null }) {
+  static async create({ username, email, password, role = 'admin', createdBy = null }) {
     try {
       // Populating all 3 audit columns on initial creation
       const [result] = await pool.query(

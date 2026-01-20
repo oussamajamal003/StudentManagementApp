@@ -5,9 +5,9 @@ const options = {
   definition: {
     openapi: '3.0.0',
     info: {
-      title: 'Hotel Booking API',
+      title: 'Student Management API',
       version: '1.0.0',
-      description: 'API documentation for the Hotel Booking App',
+      description: 'API documentation for the Student Management App',
     },
     servers: [
       {

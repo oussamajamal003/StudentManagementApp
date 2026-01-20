@@ -26,8 +26,10 @@ class UserService {
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
+    // Default role for new users is 'admin' (changed in User model)
+    const role = 'admin';
     // Public signup -> createdBy starts as null
-    const userId = await User.create({ username, email, password: hashedPassword, role: 'user', createdBy: null });
+    const userId = await User.create({ username, email, password: hashedPassword, role, createdBy: null });
 
     // FIX: Update audit fields so they are not null (user created themselves)
     // We do this immediately to ensure data consistency
@@ -49,7 +51,7 @@ class UserService {
     }
 
     const token = jwt.sign(
-      { user_id: userId, email, username, role: 'user' },
+      { user_id: userId, email, username, role },
       env.JWT_SECRET,
       { expiresIn: env.JWT_EXPIRES_IN }
     );

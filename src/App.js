@@ -3,6 +3,7 @@ const cors = require("cors");
 const morgan = require("morgan");
 const logger = require("./utils/logger");
 const userroutes = require("./routes/authroutes");
+const studentRoutes = require("./routes/studentRoutes");
 //const errorHandler = require("./Middlewares/errorHandler"); 
 
 const app = express();
@@ -62,6 +63,7 @@ if (process.env.NODE_ENV === "development") {
 }
 
 app.use("/api/auth", userroutes);
+app.use("/api/students", studentRoutes);
 //app.use("/api/users", userroutes);
 // app.use(errorHandler);
 
