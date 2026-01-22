@@ -39,6 +39,9 @@ const signup = async (req, res) => {
     if (error.message === "User already exists") {
         return res.status(409).json({ error: "User already exists" });
     }
+    if (error.message === "Username already exists") {
+        return res.status(409).json({ error: "Username already exists" });
+    }
     return res.status(500).json({ 
       error: "Internal server error during signup", 
       details: process.env.NODE_ENV === 'development' ? error.message : undefined 

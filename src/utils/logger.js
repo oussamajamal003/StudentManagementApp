@@ -20,7 +20,7 @@ const logger = winston.createLogger({
     winston.format.errors({ stack: true }), // Create stack trace for errors
     winston.format.json() // Structured JSON logging for production/files
   ),
-  defaultMeta: { service: 'hotel-booking-service' },
+  defaultMeta: { service: 'student-management-service' },
   transports: [
     // Write all logs with importance level of `error` or less to `error.log`
     new winston.transports.File({ 

@@ -25,6 +25,13 @@ class UserService {
       throw new Error("User already exists");
     }
 
+    // Check if username already exists
+    const existingUsername = await User.findByUsername(username);
+    if (existingUsername) {
+      logger.warn(`Signup failed: Username already exists - ${username}`);
+      throw new Error("Username already exists");
+    }
+
     const hashedPassword = await bcrypt.hash(password, 10);
     // Default role for new users is 'admin' (changed in User model)
     const role = 'admin';

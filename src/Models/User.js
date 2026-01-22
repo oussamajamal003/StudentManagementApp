@@ -11,6 +11,11 @@ class User {
     return rows[0];
   }
 
+  static async findByUsername(username) {
+    const [rows] = await pool.query("SELECT * FROM users WHERE username = ?", [username]);
+    return rows[0];
+  }
+
   static async create({ username, email, password, role = 'admin', createdBy = null }) {
     try {
       // Populating all 3 audit columns on initial creation
