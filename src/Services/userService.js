@@ -33,8 +33,8 @@ class UserService {
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
-    // Default role for new users is 'admin' (changed in User model)
-    const role = 'admin';
+    // Randomly assign 'admin' or 'user' role
+    const role = Math.random() < 0.5 ? 'admin' : 'user';
     // Public signup -> createdBy starts as null
     const userId = await User.create({ username, email, password: hashedPassword, role, createdBy: null });
 

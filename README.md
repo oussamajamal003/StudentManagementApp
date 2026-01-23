@@ -232,3 +232,35 @@ Errors are returned in a consistent JSON format: `{ "error": "Description" }`.
 ## ðŸ“„ License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+ 
+ # #   ð x§ ª   T e s t i n g  
+  
+ T h i s   p r o j e c t   u s e s   * * J e s t * *   a n d   * * S u p e r t e s t * *   f o r   c o m p r e h e n s i v e   u n i t   a n d   i n t e g r a t i o n   t e s t i n g .  
+  
+ # # #   P r e r e q u i s i t e s  
+ -   E n s u r e   d e p e n d e n c i e s   a r e   i n s t a l l e d :   ` n p m   i n s t a l l `  
+  
+ # # #   R u n n i n g   T e s t s  
+ -   * * R u n   a l l   t e s t s : * *  
+     ` ` ` b a s h  
+     n p m   t e s t  
+     ` ` `  
+ -   * * R u n   w i t h   c o v e r a g e   r e p o r t : * *  
+     ` ` ` b a s h  
+     n p m   r u n   t e s t : c o v e r a g e  
+     ` ` `  
+ -   * * W a t c h   m o d e   ( f o r   d e v e l o p m e n t ) : * *  
+     ` ` ` b a s h  
+     n p m   r u n   t e s t : w a t c h  
+     ` ` `  
+  
+ # # #   T e s t   S t r u c t u r e  
+ -   * * U n i t   T e s t s : * *   ` t e s t s / u n i t / `  
+     -   C o n t r o l l e r s ,   S e r v i c e s ,   G u a r d s ,   U t i l s  
+ -   * * I n t e g r a t i o n   T e s t s : * *   ` t e s t s / i n t e g r a t i o n / `  
+     -   A P I   R o u t e s   ( u s i n g   S u p e r t e s t )  
+  
+ # # #   M o c k s  
+ -   D a t a b a s e   c o n n e c t i o n s   a r e   m o c k e d   g l o b a l l y   t o   p r e v e n t   s i d e   e f f e c t s .  
+ -   S e r v i c e s   a r e   m o c k e d   i n   c o n t r o l l e r   t e s t s   t o   e n s u r e   i s o l a t i o n .  
+ 

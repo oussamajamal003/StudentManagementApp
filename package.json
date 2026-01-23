@@ -8,7 +8,9 @@
   "type": "commonjs",
   "main": "src/Server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "cross-env NODE_ENV=test jest --runInBand",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
     "dev": "nodemon src/Server.js",
     "start": "node src/Server.js"
   },
@@ -28,7 +30,10 @@
   },
   "devDependencies": {
     "connect-livereload": "^0.6.1",
+    "cross-env": "^10.1.0",
+    "jest": "^30.2.0",
     "livereload": "^0.10.3",
-    "nodemon": "^3.1.11"
+    "nodemon": "^3.1.11",
+    "supertest": "^7.2.2"
   }
 }
